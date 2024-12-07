@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDN 02 Kedukul</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  border-left: 3px solid #ddd;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Timeline Date */
+.timeline-date {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Timeline Content */
+.timeline-content {
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.timeline-content h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Circle Indicator */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+}
+
+    /* Styling tambahan */
+    .top-bar {
+      background-color: #28a745;
+      color: white;
+      padding: 5px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+  
+
+.green-line {
+  width: 100%;
+  height: 5px;
+  margin: 0 auto 15px; /* Otomatis center dan beri jarak bawah */
+  background-color: #28a745; /* Warna hijau */
+  border: none;
+}
+.card-news {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-news:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-news img {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  color: #777;
+}
+
+
+    .extracurricular-carousel .carousel-item {
+      text-align: center;
+    }
+
+    .extracurricular-carousel img {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .calendar {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Belajar dengan gembira, tumbuh dengan ilmu
+  </div>
+
+ <!-- Navbar --><!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo dan Nama Sekolah -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="img/logo.png" alt="Logo Sekolah" style="height: 50px;">
+      <span class="ms-2 fw-bold">SDN 02 Kedukul</span>
+    </a>
+
+    <!-- Menu Navigasi (di kanan) -->
+    <div class="d-flex align-items-center">
+      <ul class="navbar-nav d-flex flex-row align-items-center">
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#beranda">
+            <i class="bi bi-house-door me-2"></i>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#profil">
+            <i class="bi bi-person me-2"></i>
+            <span>Profil</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#visi-misi">
+            <i class="bi bi-bullseye me-2"></i>
+            <span>Visi & Misi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#eraport">
+            <i class="bi bi-journal-text me-2"></i>
+            <span>E-Raport</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Ikon Pencarian dan Login -->
+      <a href="#search" class="nav-link text-dark px-3"><i class="bi bi-search"></i></a>
+      <a href="#login" class="btn btn-outline-success ms-2">
+        <i class="bi bi-box-arrow-in-right me-1"></i>Login
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="beranda" class="hero">
+  <div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="hero-image">
+      <img src="img/school-banner.jpg" alt="Banner Sekolah" class="img-fluid">
+    </div>
+  </div>
+  <div class="hero-caption text-center">
+    <hr class="green-line">
+    <h2 class="fw-bold text-dark">Selamat Datang di SDN 02 Kedukul</h2>
+    <p class="text-secondary fs-5">Mencetak generasi yang cerdas, berkarakter, dan berprestasi</p>
+  </div>
+</section>
+
+ <!-- Profil -->
+ <section id="profil" class="py-5 bg-light">
+  <div class="container">
+  
+    <h2 class="text-center mb-4">Profil Sekolah</h2>
+    <p>SDN 02 Kedukul berdiri sejak tahun XXXX dan telah mencetak banyak generasi emas. Dengan lingkungan belajar yang nyaman dan tenaga pengajar yang profesional, kami berkomitmen untuk memberikan pendidikan terbaik.</p>
+  </div>
+</section>
+
+    <!-- Visi & Misi -->
+    <section id="visi-misi" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Visi & Misi</h2>
+        <p><strong>Visi:</strong> Menjadikan SDN 02 Kedukul sebagai sekolah unggulan di bidang akademik dan karakter.</p>
+        <p><strong>Misi:</strong></p>
+        <ul>
+          <li>Meningkatkan kualitas pembelajaran dengan kurikulum modern.</li>
+          <li>Membentuk siswa yang berakhlak mulia dan berwawasan global.</li>
+          <li>Menyediakan fasilitas pendidikan yang memadai.</li>
+        </ul>
+      </div>
+    </section>
+  
+   
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Galeri Sekolah</h2>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <img src="img/gallery1.jpg" class="img-fluid rounded" alt="Galeri 1">
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="img/gallery2.jpg" class="img-fluid rounded" alt="Galeri 2">
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="img/gallery3.jpg" class="img-fluid rounded" alt="Galeri 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Profil Sekolah -->
+  <section id="berita" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold text-primary">Berita Terbaru</h2>
+      <!-- Contoh Berita -->
+      <div class="card-news mb-4 shadow-sm">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/news1.jpg" alt="Berita 1" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Judul Berita 1</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel risus eget sapien blandit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card-news shadow-sm">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/news2.jpg" alt="Berita 2" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Judul Berita 2</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel risus eget sapien blandit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-news shadow-sm">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/news3.jpg" alt="Berita 2" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Judul Berita 3</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel risus eget sapien blandit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kegiatan Ekstrakurikuler -->
+  <section id="ekskul" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Kegiatan Ekstrakurikuler</h2>
+      <div id="extracurricularCarousel" class="carousel slide extracurricular-carousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/ekskul1.jpg" class="d-block mx-auto" alt="Ekskul 1">
+            <h5>Pramuka</h5>
+            <p>Belajar kedisiplinan dan kerja sama.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="img/ekskul2.jpg" class="d-block mx-auto" alt="Ekskul 2">
+            <h5>Olahraga</h5>
+            <p>Melatih fisik dan mental melalui berbagai cabang olahraga.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="img/ekskul3.jpg" class="d-block mx-auto" alt="Ekskul 3">
+            <h5>Seni Tari</h5>
+            <p>Melestarikan budaya melalui seni tari.</p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#extracurricularCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#extracurricularCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+<!-- Kalender Pendidikan -->
+<section id="kalender-pendidikan" class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold">Kalender Pendidikan 2024 & 2025</h2>
+    <p class="text-center text-secondary mb-4">Informasi lengkap tentang kegiatan akademik dan hari libur sekolah.</p>
+    
+    <!-- Tahun 2024 -->
+    <div class="mb-5">
+      <h3 class="fw-bold text-success">Tahun 2024</h3>
+      <ul class="list-group">
+        <li class="list-group-item">1 – 7 Juli 2024: Libur Kenaikan Kelas</li>
+        <li class="list-group-item">7 Juli 2024: Libur Tahun Baru Islam 1445 H</li>
+        <li class="list-group-item">8 Juli 2024: Hari Pertama Sekolah (HP)</li>
+        <li class="list-group-item">8 – 10 Juli 2024: Masa Pengenalan Lingkungan Sekolah (MPLS)</li>
+        <li class="list-group-item">11 – 19 Juli 2024: MPLS Tambahan Khusus Jenjang PAUD dan SD</li>
+        <li class="list-group-item">17 Agustus 2024: Libur Hari Kemerdekaan Republik Indonesia</li>
+        <li class="list-group-item">9 – 13 September 2024: Penilaian Tengah Semester Ganjil</li>
+        <li class="list-group-item">16 September 2024: Libur Maulid Nabi Muhammad SAW</li>
+        <li class="list-group-item">9 – 13 Desember 2024: Penilaian Akhir Semester Ganjil</li>
+        <li class="list-group-item">20 Desember 2024: Pembagian Laporan Hasil Belajar (Rapor)</li>
+        <li class="list-group-item">21 Desember 2024 – 5 Januari 2025: Libur Semester Ganjil</li>
+        <li class="list-group-item">25 – 26 Desember 2024: Libur Hari Raya Natal 2024</li>
+      </ul>
+    </div>
+    
+    <!-- Tahun 2025 -->
+    <div>
+      <h3 class="fw-bold text-primary">Tahun 2025</h3>
+      <ul class="list-group">
+        <li class="list-group-item">1 Januari 2025: Libur Tahun Baru Masehi 2025</li>
+        <li class="list-group-item">1 – 5 Januari 2025: Libur Semester Ganjil</li>
+        <li class="list-group-item">6 Januari 2025: Hari Pertama Sekolah (HP)</li>
+        <li class="list-group-item">27 Januari 2025: Libur Isra Mi’raj</li>
+        <li class="list-group-item">29 Januari 2025: Libur Tahun Baru Imlek</li>
+        <li class="list-group-item">27 Februari – 2 Maret 2025: Libur Awal Puasa Ramadan 1446 H</li>
+        <li class="list-group-item">10 – 14 Maret 2025: Penilaian Tengah Semester Genap</li>
+        <li class="list-group-item">25 Maret – 7 April 2025: Perkiraan Libur Idul Fitri 1446 H</li>
+        <li class="list-group-item">31 Maret – 1 April 2025: Libur Hari Raya Idul Fitri 1446 H</li>
+        <li class="list-group-item">14 – 16 Juli 2025: Masa Pengenalan Lingkungan Sekolah (MPLS)</li>
+        <li class="list-group-item">17 – 25 Juli 2025: MPLS Tambahan Khusus Jenjang PAUD dan SD</li>
+        <li class="list-group-item">7 Juni 2025: Libur Hari Raya Idul Adha 1446 H</li>
+        <li class="list-group-item">16 – 20 Juni 2025: Penilaian Akhir Semester Genap</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- E-Raport -->
+  <section id="eraport" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">E-Raport</h2>
+      <p>Masukkan NIS Anda untuk melihat nilai:</p>
+      <form class="d-flex justify-content-center">
+        <input type="text" class="form-control w-50 me-2" placeholder="Masukkan NIS">
+        <button type="submit" class="btn btn-primary">Cari</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 SDN 02 Kedukul. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
